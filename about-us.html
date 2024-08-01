@@ -49,7 +49,7 @@
             </div>
         </header>
         <!--================Header Menu Area =================-->
-        
+
 		<section class="home_banner_area">
 			<div class="container box_1620">
 				<div class="banner_inner d-flex align-items-center">
@@ -62,6 +62,22 @@
 							</div>
 						</section>
 						<div class="media">
+							<style>
+								.carousel-control-prev, .carousel-control-next {
+									top: 50%; /* Centrer verticalement les flèches */
+									transform: translateY(-50%); /* Centrer parfaitement */
+									width: 5%; /* Ajuster la largeur pour une meilleure visibilité */
+								}
+								.carousel-control-prev {
+									left: 10px; /* Ajuster si nécessaire pour mieux voir à gauche */
+								}
+								.carousel-control-next {
+									right: 10px; /* Ajuster si nécessaire pour mieux voir à droite */
+								}
+								.carousel-control-prev-icon, .carousel-control-next-icon {
+									filter: grayscale(100%) brightness(0.5); /* Changer la couleur en gris */
+								}
+							</style>
 							<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 								<ol class="carousel-indicators">
 									<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -87,7 +103,6 @@
 											</div>
 										</div>
 									</div>
-								</div>
                                     <div class="carousel-item">
                                         <div class="d-flex">
                                             <img src="img/IMG_4944 (1) (1).jpg" class="carousel-image" alt="Image 2" style="width: 50%; border-radius: 15px;">
@@ -121,20 +136,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="left: -15px;">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="right: -15px;">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+								</div>
+								<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="sr-only">Previous</span>
+								</a>
+								<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
 
         <!--================End Home Banner Area =================-->
  
@@ -179,7 +196,7 @@
 				var correctAnswer = 'valence';
 				var feedbackElement = document.getElementById('quiz-feedback-valencia');
 				if (answer === correctAnswer) {
-					feedbackElement.innerHTML = '"Bravo ! 😄';
+					feedbackElement.innerHTML = 'Bravo ! 😄';
 					feedbackElement.style.color = 'green';
 				} else {
 					feedbackElement.innerHTML = 'Raté ! 😅 Moi aussi, je suis mauvais en géographie.';
