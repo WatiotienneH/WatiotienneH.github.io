@@ -78,79 +78,91 @@
 									filter: grayscale(100%) brightness(0.5); /* Changer la couleur en gris */
 								}
 							</style>
-							<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-								<ol class="carousel-indicators">
-									<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-									<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-									<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-									<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-									<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-								</ol>
-								<div class="carousel-inner">
-									<div class="carousel-item active">
-										<div class="d-flex">
-											<img src="img/caption.jpg" class="carousel-image" alt="Image 1" style="width: 50%; border-radius: 15px;">
-											<div class="carousel-text ml-4" style="background-color: #f7f7f7; border-radius: 15px; padding: 20px;">
-												<p>J'adore voyager, découvrir des cultures et vivre des nouvelles expériences. Sur cette photo, je vous emmène lors de mon dernier voyage. Reconnaissez-vous cette ville ?</p>
-												<div class="quiz" id="quiz-valencia">
-													<h4>Devinez la ville :</h4>
-													<button class="btn btn-primary quiz-option" data-quiz="valencia" data-answer="valence" onclick="validateAnswer('valence')">Valence</button>
-													<button class="btn btn-primary quiz-option" data-quiz="valencia" data-answer="barcelone" onclick="validateAnswer('barcelone')">Barcelone</button>
-													<button class="btn btn-primary quiz-option" data-quiz="valencia" data-answer="madrid" onclick="validateAnswer('madrid')">Madrid</button>
-													<button class="btn btn-primary quiz-option" data-quiz="valencia" data-answer="seville" onclick="validateAnswer('seville')">Séville</button>
-													<p id="quiz-feedback-valencia" style="margin-top: 10px;"></p>
-												</div>
-											</div>
-										</div>
-									</div>
-                                    <div class="carousel-item">
-                                        <div class="d-flex">
-                                            <img src="img/IMG_4944 (1) (1).jpg" class="carousel-image" alt="Image 2" style="width: 50%; border-radius: 15px;">
-                                            <div class="carousel-text ml-4">
-                                                <p>Description for Image 2</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="d-flex">
-                                            <img src="img/IMG_4944 (1) (1).jpg" class="carousel-image" alt="Image 3" style="width: 50%; border-radius: 15px;">
-                                            <div class="carousel-text ml-4">
-                                                <p>Description for Image 3</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="d-flex">
-                                            <img src="img/IMG_4944 (1) (1).jpg" class="carousel-image" alt="Image 4" style="width: 50%; border-radius: 15px;">
-                                            <div class="carousel-text ml-4">
-                                                <p>Description for Image 4</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="d-flex">
-                                            <img src="img/IMG_4944 (1) (1).jpg" class="carousel-image" alt="Image 5" style="width: 50%; border-radius: 15px;">
-                                            <div class="carousel-text ml-4">
-                                                <p>Description for Image 5</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-								</div>
-								<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-									<span class="sr-only">Previous</span>
-								</a>
-								<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-									<span class="carousel-control-next-icon" aria-hidden="true"></span>
-									<span class="sr-only">Next</span>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-flex">
+                    <img src="img/caption.jpg" class="carousel-image" alt="Image 1" style="width: 50%; border-radius: 15px;">
+                    <div class="carousel-text ml-4" style="background-color: #f7f7f7; border-radius: 15px; padding: 20px;">
+                        <div style="background-color: #e6e6e6; border-radius: 10px; padding: 15px;">
+                            <p>J'adore voyager, découvrir des cultures et vivre de nouvelles expériences. Sur cette photo, je vous emmène lors de mon dernier voyage. Reconnaissez-vous cette ville ?</p>
+                            <div class="quiz" id="quiz-valencia">
+                                <h4>Devinez la ville :</h4>
+                                <button class="btn btn-primary quiz-option" data-quiz="valencia" data-answer="valence" onclick="validateAnswer('valence')">Valence</button>
+                                <button class="btn btn-primary quiz-option" data-quiz="valencia" data-answer="barcelone" onclick="validateAnswer('barcelone')">Barcelone</button>
+                                <button class="btn btn-primary quiz-option" data-quiz="valencia" data-answer="madrid" onclick="validateAnswer('madrid')">Madrid</button>
+                                <button class="btn btn-primary quiz-option" data-quiz="valencia" data-answer="seville" onclick="validateAnswer('seville')">Séville</button>
+                                <p id="quiz-feedback-valencia" style="margin-top: 10px;"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex">
+                    <img src="img/IMG_4944 (1) (1).jpg" class="carousel-image" alt="Image 2" style="width: 50%; border-radius: 15px;">
+                    <div class="carousel-text ml-4" style="background-color: #f7f7f7; border-radius: 15px; padding: 20px;">
+                        <div style="background-color: #e6e6e6; border-radius: 10px; padding: 15px;">
+                            <p>J'apprécie beaucoup les échecs pour leur aspect stratégique. J'aime réfléchir et anticiper les mouvements de mes adversaires, ce qui rend chaque partie unique et stimulante.</p>
+                            <p>Vous voulez essayer de défier mon bot ? Cliquez sur le bouton ci-dessous pour jouer une partie.</p>
+                            <a href="URL_TO_YOUR_CHESS_BOT" class="btn btn-primary">Jouer contre le bot</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex">
+                    <img src="img/IMG_4944 (1) (1).jpg" class="carousel-image" alt="Image 3" style="width: 50%; border-radius: 15px;">
+                    <div class="carousel-text ml-4" style="background-color: #f7f7f7; border-radius: 15px; padding: 20px;">
+                        <div style="background-color: #e6e6e6; border-radius: 10px; padding: 15px;">
+                            <p>Connaissez-vous le billon ?</p>
+                            <p>C'est un jeu ancien que l'on s'efforce de faire perdurer. Son but, qui peut sembler simple, est d'être le plus proche de l'objectif. Cependant, il exige une grande stratégie. Ce jeu requiert également beaucoup d'adresse et anime quelques weekends d'été avec des compétitions conviviales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex">
+                    <img src="img/IMG_4944 (1) (1).jpg" class="carousel-image" alt="Image 4" style="width: 50%; border-radius: 15px;">
+                    <div class="carousel-text ml-4" style="background-color: #f7f7f7; border-radius: 15px; padding: 20px;">
+                        <div style="background-color: #e6e6e6; border-radius: 10px; padding: 15px;">
+                            <p>Les jeux de société</p>
+                            <p>Les jeux de société ont toujours été une passion pour moi. Ils sont une excellente manière de se réunir entre amis et en famille, de partager des moments de complicité et de stratégie. Que ce soit une soirée jeux de plateau ou une après-midi de jeux de cartes, chaque partie est une nouvelle aventure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex">
+                    <img src="img/IMG_4944 (1) (1).jpg" class="carousel-image" alt="Image 5" style="width: 50%; border-radius: 15px;">
+                    <div class="carousel-text ml-4" style="background-color: #f7f7f7; border-radius: 15px; padding: 20px;">
+                        <div style="background-color: #e6e6e6; border-radius: 10px; padding: 15px;">
+                            <p>Le reste de mes passions</p>
+                            <p>Il y a beaucoup d'autres choses que j'apprécie et qui me passionnent. Voici un petit condensé de mes autres intérêts variés.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    </section>
+    
 		
 
         <!--================End Home Banner Area =================-->
