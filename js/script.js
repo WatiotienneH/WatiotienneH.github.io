@@ -1,42 +1,39 @@
-// script.js
-document.addEventListener('DOMContentLoaded', function () {
-    var board,
-        game = new Chess(),
-        engine = STOCKFISH();
+document.addEventListener('DOMContentLoaded', function() {
+    var board, game = new Chess();
 
-    // Set up the board
-    board = Chessboard('board', {
+    var config = {
         draggable: true,
         position: 'start',
-        onDrop: handleMove
-    });
+        onDrop: handleMove,
+        onSnapEnd: updateBoard
+    };
 
-    // Handle move
+    board = Chessboard('myBoard', config);
+
     function handleMove(source, target) {
         var move = game.move({
             from: source,
             to: target,
-            promotion: 'q' // Always promote to a queen for simplicity
+            promotion: 'q'
         });
 
         if (move === null) return 'snapback';
-
-        window.setTimeout(makeAIMove, 250);
+        else window.setTimeout(makeBestMove, 250);
     }
 
-    function makeAIMove() {
-        engine.postMessage('position fen ' + game.fen());
-        engine.postMessage('go movetime 1000');
+    function updateBoard() {
+        board.position(game.fen());
+    }
 
-        engine.onmessage = function (event) {
-            var message = event.data;
+    function makeBestMove() {
+        var bestMove = getBestMove(game);
+        game.move(bestMove);
+        board.position(game.fen());
+    }
 
-            if (message.startsWith('bestmove')) {
-                var move = message.split(' ')[1];
-                game.move(move);
-                board.position(game.fen());
-            }
-        };
+    function getBestMove(game) {
+        var moves = game.moves();
+        var move = moves[Math.floor(Math.random() * moves.length)];
+        return move;
     }
 });
-
