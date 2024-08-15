@@ -891,6 +891,76 @@ a:focus {
     white-space: nowrap;
     overflow: hidden;
 }
+/* Gallery Section Styling */
+.home_gallery_area {
+    padding: 60px 0;
+}
+
+.main_title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main_title h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.main_title p {
+    font-size: 18px;
+    color: #777;
+}
+
+.gallery_f_inner .h_gallery_item {
+    margin-bottom: 30px;
+}
+
+.g_img_item {
+    position: relative;
+    overflow: hidden;
+}
+
+.g_img_item img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.g_img_item:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.g_img_item:hover .overlay {
+    opacity: 1;
+}
+
+.g_item_text {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.g_item_text h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.g_item_text p {
+    font-size: 16px;
+    color: #777;
+}
 
 .portfolio .portfolio-text a.btn {
     width: 50px;
