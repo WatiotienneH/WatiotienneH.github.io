@@ -1,3 +1,34 @@
+// Ajoutez le code du Worker comme une chaîne
+var workerScript = `
+// Mettez ici le code que vous auriez normalement dans 'chessboard.js'
+self.onmessage = function(e) {
+  // Simulez un traitement, par exemple
+  console.log('Worker: Message reçu', e.data);
+  // Envoie un message de retour après un traitement
+  self.postMessage({ from: { x: 0, y: 1 }, to: { x: 0, y: 2 } });
+};
+`;
+
+// Créez un Blob à partir de cette chaîne et initialisez le Worker
+var blob = new Blob([workerScript], { type: 'application/javascript' });
+var workerScriptURL = URL.createObjectURL(blob);
+const chessEngine = new Worker(workerScriptURL);
+
+// Écouteur pour les messages venant du Worker
+chessEngine.addEventListener('message', function (e) {
+  const move = e.data;
+  makeMove(move.from.x, move.from.y, move.to.x, move.to.y, move);
+  currentTurn = 'human';
+  choosingState = 'none';
+  $('.enabled').removeClass('enabled');
+  setStatus('Your turn, You are white!');
+  if (checkWin()) return;
+});
+
+// Libérez l'URL lorsque vous avez fini avec le Worker
+URL.revokeObjectURL(workerScriptURL);
+
+
 const num_threads = 1;
 const MT = new Multithread(num_threads);
 
