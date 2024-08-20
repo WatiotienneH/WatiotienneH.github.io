@@ -15,6 +15,12 @@
     // Initiate the wowjs
     new WOW().init();
     
+    document.querySelectorAll('.navbar-nav a').forEach(function(navLink) {
+        navLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.href = this.href;
+        });
+    });
     
     // Back to top button
     $(window).scroll(function () {

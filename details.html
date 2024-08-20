@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Welcome - Henry Watiotienne Portfolio</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body data-spy="scroll" data-target=".navbar" data-offset="51">
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-light navbar-light">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">Portfolio</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html#home" class="nav-item nav-link active">Accueil</a>
+                        <a href="index.html#about" class="nav-item nav-link">A propos</a>
+                        <a href="index.html#service" class="nav-item nav-link">Formation</a>
+                        <a href="index.html#experience" class="nav-item nav-link">Experience</a>
+                        <a href="index.html#portfolio" class="nav-item nav-link">Portfolio</a>
+                        <a href="index.html#team" class="nav-item nav-link">Hobbies</a>
+                        <a href="index.html#isfooter" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+
+        <!-- Hero Start -->
+        <div class="hero" id="home">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <h1>Stage : Data Scientist & ML Engineer </h1>
+                                <h2></h2>
+                                <div class="typed-text">LLM, IA générative, computeur vision, Python</div>
+                            </div>
+                            <div class="hero-btn">
+                                <a class="btn" href="#isfooter">Contact moi</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 d-none d-md-block">
+                        <div class="hero-image">
+                            <img src="img/dp.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+        <div class="container">
+            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                <h2>Résumé du Stage</h2>
+            </div>
+            <div class="content">
+                <p>
+                    <strong>Nous sommes partis d'un constat simple :</strong> bien que les Large Language Models (LLM) soient extrêmement performants pour la compréhension et la génération de texte, ils montrent des faiblesses lorsqu'il s'agit de tâches nécessitant des connaissances spécifiques ou des capacités multimodales, comme le traitement d'images. Pourtant, certains modèles de machine learning, ou plus simplement des fonctions spécifiques, peuvent exceller dans ces tâches.
+                </p>
+        
+                <h3>Objectif du Stage :</h3>
+                <p>
+                    L'objectif était donc simple : durant ce stage, un Proof of Concept (POC) a été développé pour démontrer l'efficacité d'une architecture hybride basée sur un Large Language Model (LLM) appuyé par des plugins spécialisés.                </p>
+        
+                <h3>Architecture Mise en Place :</h3>
+
+                <p>Voici quelques éléments pour mieux comprendre l'architecture développée :</p>
+                <div class="text-center">
+                    <img src="img\Capture d'écran 2024-08-20 205410.png" alt="Architecture du Modèle" class="img-fluid">
+                </div>
+                <div class="container">
+                    <h8>Partie 1 :</h8>
+                    <ul>
+                        <li>Formation du premier prompt à partir de la liste de plugins, de la requête et du template</li>
+                        <li>Sélection du plugin par le (M)LLM</li>
+                        <li>Si le plugin demande des paramètres :</li>
+                        <ul>
+                            <li>Récupération de la documentation du plugin</li>
+                        </ul>
+                    </ul>
+                
+                    <h8>Partie 2 :</h8>
+                    <ul>
+                        <li>Formation du deuxième prompt à partir de la documentation, de la requête et du template</li>
+                        <li>Génération du JSON</li>
+                        <li>Optionnel : Redirection si le plugin sélectionné est jugé inapproprié par le (M)LLM</li>
+                        <li>Exécution du plugin</li>
+                    </ul>
+                </div>
+                <h3>Évaluation des Performances :</h3>
+                <p>
+                    Nous avons créé notre propre benchmark pour évaluer l'efficacité de la sélection des plugins et la génération des paramètres. Les résultats obtenus montrent des précisions très satisfaisantes avec un score de 98,9 % de réussite pour la sélection du plugin et de 93,4 % pour la génération des paramètres.
+                </p>
+        
+                <h3>Développement des Plugins :</h3>
+                <p>
+                    Des plugins ont été développés pour illustrer des cas d'usage importants dans un contexte industriel. Chaque plugin a été conçu pour répondre à des besoins spécifiques et optimiser le traitement des données dans diverses situations.
+                </p>
+                
+                <h6>RAG Plugin :</h6>
+                <p>
+                    Le plugin RAG (Retrieval-Augmented Generation) a été développé et optimisé pour répondre à des questions dans des domaines spécifiques où une base de connaissances est disponible. Ce plugin permet de fournir des réponses précises en s'appuyant sur cette base de connaissances tout en citant les sources utilisées. Il est particulièrement efficace pour des applications où l'exactitude et la traçabilité des informations sont cruciales.
+                </p>
+                <div class="text-center">
+                    <img src="img\Capture d'écran 2024-08-20 214408.png" alt="RAG Plugin" class="img-fluid">
+                </div>
+                Nous avons également étudié des améliorations telles que la recherche hybride de documents, le re-ranking des documents et la reformulation des questions (avec HyDE) pour améliorer la pertinence des documents récupérés.
+                <div class="container">
+                    <h6>Présentation d'OWLv2</h6>
+                    <p>
+                        <strong>OWLv2</strong> est un modèle avancé de détection d'objets utilisant un vocabulaire ouvert, capable de reconnaître des objets qu'il n'a pas explicitement appris à détecter lors de son entraînement. Grâce à une méthode d'auto-formation (self-training) et à l'exploitation de données massives provenant d'Internet, OWLv2 élargit considérablement sa base de données d'entraînement, atteignant une grande précision même sur des objets inconnus via la détection zéro-shot. Cette technologie repose sur des embeddings sémantiques qui permettent de transférer les connaissances d'objets connus à des objets inconnus.
+                    </p>
+                    
+                    <h6>Cas d'usage :</h6>
+                    <ul>
+                        <li><strong>Comptage en zone dense :</strong> OWLv2 peut être utilisé pour compter avec précision des objets dans des environnements denses, comme des foules ou des ensembles de produits en magasin, en exploitant sa capacité à identifier un grand nombre d'éléments différents.</li>
+                        <li><strong>Identification zéro-shot avec un text query :</strong> En fournissant au modèle une image et une liste de termes (text query), OWLv2 est capable d'identifier des objets qu'il n'a jamais rencontrés pendant sa phase d'apprentissage, démontrant ainsi sa puissance dans des scénarios où l'inventaire des objets est constamment en évolution.</li>
+                    </ul>
+                
+            <!-- Section des images côte à côte -->
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img src="img/owl1.png" alt="Image 1" class="img-fluid same-size">
+                    <p>Comptage d'objets en zone dense. Résultat lorsqu'on demande d'identifier les <em>"block"</em>.</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="img/owl2.png" alt="Image 2" class="img-fluid same-size">
+                    <p>Identification d'objets. Résultat lorsqu'on demande d'identifier <em>“hat”</em>, <em>“book”</em>, <em>“sunglasses”</em>, <em>“camera”</em>.</p>
+                </div>
+            </div>
+
+            <!-- Add this style block to your CSS -->
+            <style>
+                .same-size {
+                    height: 300px; /* Set the same height for both images */
+                    width: auto; /* Maintain the aspect ratio */
+                    object-fit: cover; /* Cover the area with the image, cropping it if necessary */
+                }
+            </style>
+
+                </div>
+                
+                <h6>Plugin de Classification :</h6>
+                <p>
+                    Le plugin de Classification a été développé pour effectuer des tâches de catégorisation automatique en utilisant un fine-tuning du modèle de vision YOLOv8. Ce plugin est essentiel pour des applications telles que la classification d'images de produits défectueux ou normaux sur une chaîne de distribution, par exemple.
+                </p>
+                <div class="text-center">
+                    <img src="img\hardhat.png" alt="Exemple de Classification" class="img-fluid">
+                    <p>Exemple d'application du plugin de Classification : détection la présence et l'absence de casque</p>
+                </div>
+                
+        
+                <h3>Optimisation de l'Architecture :</h3>
+                <p>
+                    Pour optimiser notre architecture, nous avons utilisé des librairies telles que vLLM et le traitement par batch, ce qui a permis d'obtenir des gains de performance significatifs, notamment un gain de performance avec un facteur de 14 sur le temps d'inférence. Nous avons également envisagé des métriques pour un futur déploiement, afin d'estimer le coût et le temps d'inférence.
+                </p>
+        
+                <h3>Gestion des Erreurs en Contexte Industriel :</h3>
+                <p>
+                    Dans un contexte industriel, où les risques d'erreur ne sont pas permis, il est crucial que le LLM soit capable de reconnaître ses limites. C'est pourquoi nous avons introduit un plugin de restriction. Ce plugin est sélectionné par défaut lorsque aucun autre plugin ne convient, et il cadre le champ d'expertise du LLM en renvoyant une réponse du type "Ceci ne fait pas partie de mon domaine d'expertise".
+                </p>
+        
+                <h3>Conclusion :</h3>
+                <p>
+                    Toutes ces recherches ont été utilisées dans la réalisation du Proof of Concept (POC), où nous avons démontré la faisabilité de notre architecture. Par souci de disponibilité des données open source, nous avons appliqué ce POC au domaine médical. Les cas d'usage illustrés dans la démonstration montrent un système piloté automatiquement par un LLM, avec une gestion dynamique de l'ajout et de la suppression des plugins, permettant un LLM complètement modulable et adaptable aux besoins spécifiques de l'industrie.
+                </p>
+                <p>
+                    Pour illustrer concrètement ces concepts, une démo vidéo a été réalisée. Cette vidéo montre comment le système fonctionne en temps réel, en mettant en évidence l'efficacité de l'architecture dans des scénarios pratiques. Elle démontre également la facilité avec laquelle les plugins peuvent être ajoutés ou retirés, offrant une flexibilité maximale pour répondre aux besoins spécifiques de chaque application.
+                </p>
+                
+                <!-- Section du lecteur vidéo -->
+                <div class="text-center">
+                    <video controls width="800">
+                        <source src="img\Screen recording 2024-08-08 10.55.36.webm" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture des vidéos.
+                    </video>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <!-- Footer Start -->
+        <div class="footer wow fadeIn" data-wow-delay="0.3s" id="isfooter">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="footer-info">
+                        <h2>Send me a Message !</h2>
+                        <h3>Henry Watiotienne</h3>
+                        <div class="footer-menu">
+                            <p>06 52 87 79 30</p>
+                            <p>hrywatiotienne@gmail.com</p>
+                        </div>
+                        <h3>Lille, France</h3>
+
+                        <div class="footer-social">
+                            <!--a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-youtube"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a -->
+                            <a href="https://github.com/WatiotienneH" target="_blank"><i class="fab fa-github"></i></a>
+
+                            <a href="https://www.linkedin.com/in/henry-watiotienne-072085293/" target="_blank"><i class="fab fa-linkedin-in" ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container copyright">
+
+                    <p>&copy; <a href="#">Henry Watiotienne</a>, All Right Reserved | Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        
+        <!-- Back to top button -->
+        <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        
+        <!-- Pre Loader -->
+        <div id="loader" class="show">
+            <div class="loader"></div>
+        </div>
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/typed/typed.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
