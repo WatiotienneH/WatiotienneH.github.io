@@ -18,14 +18,20 @@
     $(".navbar-nav a").on('click', function (event) {
         if (this.hash !== "") {
             event.preventDefault();
+
+            var hash = this.hash;
             
             $('html, body').animate({
-                scrollTop: $(this.hash).offset().top - 45
-            }, 800, 'easeInOutExpo');
+                scrollTop: $(hash).offset().top - 45
+            }, 800, 'easeInOutExpo', function(){
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
             
+            // Add active class to the clicked link and remove from others
             if ($(this).parents('.navbar-nav').length) {
                 $('.navbar-nav .active').removeClass('active');
-                $(this).closest('a').addClass('active');
+                $(this).addClass('active');
             }
         }
     });
@@ -96,4 +102,20 @@
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
     
+    // Manage active class based on current page
+    $(document).ready(function() {
+        // Get the current URL path and filename
+        var pathname = window.location.pathname;
+
+        // Loop through nav links and add 'active' class based on current URL
+        $('.navbar-nav a').each(function() {
+            var linkPath = $(this).attr('href').split('#')[0]; // Get path without the hash
+
+            if (pathname.includes(linkPath)) {
+                $('.navbar-nav .active').removeClass('active');
+                $(this).addClass('active');
+            }
+        });
+    });
+
 })(jQuery);
