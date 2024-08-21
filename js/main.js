@@ -16,19 +16,22 @@
     
     // Smooth scrolling on the navbar links
     $(".navbar-nav a").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-
+        // Vérifiez si this.hash est défini et non vide
+        if (this.hash !== "" && $(this.hash).length) {
+            event.preventDefault(); // Empêche le comportement par défaut du lien
+            
+            // Stockez le hash
             var hash = this.hash;
             
+            // Animez le défilement fluide
             $('html, body').animate({
                 scrollTop: $(hash).offset().top - 45
-            }, 800, 'easeInOutExpo', function(){
-                // Add hash (#) to URL when done scrolling (default click behavior)
+            }, 800, 'easeInOutExpo', function () {
+                // Ajoutez le hash à l'URL une fois le défilement terminé (comportement par défaut du clic)
                 window.location.hash = hash;
             });
             
-            // Add active class to the clicked link and remove from others
+            // Met en surbrillance le lien actif
             if ($(this).parents('.navbar-nav').length) {
                 $('.navbar-nav .active').removeClass('active');
                 $(this).addClass('active');
@@ -57,7 +60,23 @@
             $('.navbar').removeClass('nav-sticky');
         }
     });
-    
+
+    // Active class for current page
+    $(document).ready(function() {
+        // Obtenez le chemin d'URL actuel
+        var pathname = window.location.pathname;
+
+        // Mettez en surbrillance l'élément nav correct en fonction de la page actuelle
+        if (pathname.includes("index.html")) {
+            $('a[href^="index.html"]').addClass('active');
+        } else if (pathname.includes("page1.html")) {
+            $('a[href^="page1.html"]').addClass('active');
+        } else if (pathname.includes("page2.html")) {
+            $('a[href^="page2.html"]').addClass('active');
+        }
+        // Ajoutez plus de conditions si vous avez plus de pages
+    });
+
     // Typed Initiate
     if ($('.hero .hero-text h2').length == 1) {
         var typed_strings = $('.hero .hero-text .typed-text').text();
@@ -102,20 +121,4 @@
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
     
-    // Manage active class based on current page
-    $(document).ready(function() {
-        // Get the current URL path and filename
-        var pathname = window.location.pathname;
-
-        // Loop through nav links and add 'active' class based on current URL
-        $('.navbar-nav a').each(function() {
-            var linkPath = $(this).attr('href').split('#')[0]; // Get path without the hash
-
-            if (pathname.includes(linkPath)) {
-                $('.navbar-nav .active').removeClass('active');
-                $(this).addClass('active');
-            }
-        });
-    });
-
 })(jQuery);
