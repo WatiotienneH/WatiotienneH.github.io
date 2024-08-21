@@ -1,7 +1,7 @@
 (function ($) {
     "use strict";
-    
-    // loader
+
+    // Loader
     var loader = function () {
         setTimeout(function () {
             if ($('#loader').length > 0) {
@@ -11,15 +11,23 @@
     };
     loader();
     
-    
     // Initiate the wowjs
     new WOW().init();
     
-    document.querySelectorAll('.navbar-nav a').forEach(function(navLink) {
-        navLink.addEventListener('click', function(event) {
+    // Smooth scrolling on the navbar links
+    $(".navbar-nav a").on('click', function (event) {
+        if (this.hash !== "") {
             event.preventDefault();
-            window.location.href = this.href;
-        });
+            
+            $('html, body').animate({
+                scrollTop: $(this.hash).offset().top - 45
+            }, 800, 'easeInOutExpo');
+            
+            if ($(this).parents('.navbar-nav').length) {
+                $('.navbar-nav .active').removeClass('active');
+                $(this).closest('a').addClass('active');
+            }
+        }
     });
     
     // Back to top button
@@ -35,7 +43,6 @@
         return false;
     });
     
-    
     // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 0) {
@@ -44,24 +51,6 @@
             $('.navbar').removeClass('nav-sticky');
         }
     });
-    
-    
-    // Smooth scrolling on the navbar links
-    $(".navbar-nav a").on('click', function (event) {
-        if (this.hash !== "") {
-            event.preventDefault();
-            
-            $('html, body').animate({
-                scrollTop: $(this.hash).offset().top - 45
-            }, 1500, 'easeInOutExpo');
-            
-            if ($(this).parents('.navbar-nav').length) {
-                $('.navbar-nav .active').removeClass('active');
-                $(this).closest('a').addClass('active');
-            }
-        }
-    });
-    
     
     // Typed Initiate
     if ($('.hero .hero-text h2').length == 1) {
@@ -75,14 +64,12 @@
         });
     }
     
-    
     // Skills
     $('.skills').waypoint(function () {
         $('.progress .progress-bar').each(function () {
             $(this).css("width", $(this).attr("aria-valuenow") + '%');
         });
     }, {offset: '80%'});
-
 
     // Testimonials carousel
     $(".testimonials-carousel").owlCarousel({
@@ -97,8 +84,6 @@
         }
     });
     
-    
-    
     // Portfolio filter
     var portfolioIsotope = $('.portfolio-container').isotope({
         itemSelector: '.portfolio-item',
@@ -112,4 +97,3 @@
     });
     
 })(jQuery);
-
