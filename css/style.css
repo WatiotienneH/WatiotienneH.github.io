@@ -129,18 +129,21 @@ a:focus {
     color: #414141;
 }
 
+
 /**********************************/
 /*********** Nav Bar CSS **********/
 /**********************************/
 .navbar {
-    position: fixed; /* Fixe la barre de navigation en haut de la page */
+    position: relative;
+    transition: .5s;
+    z-index: 999;
+}
+
+.navbar.nav-sticky {
+    position: fixed;
     top: 0;
     width: 100%;
-    padding: 30px 60px; /* Conservez le padding de la version en haut */
-    background: #ffffff !important; /* Assurez-vous que l'arrière-plan est blanc */
-    border-bottom: 1px dashed rgba(256, 256, 256, .2); /* Conservez la bordure */
-    z-index: 999; /* Assurez-vous que la barre reste au-dessus du contenu */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .3); /* Conservez l'ombre */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
 }
 
 .navbar .navbar-brand {
@@ -149,7 +152,8 @@ a:focus {
     line-height: 0px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: #96b4d2; /* Conservez la couleur du texte */
+    transition: .5s;
+    
 }
 
 .navbar .navbar-brand img {
@@ -164,20 +168,53 @@ a:focus {
     background: #f8f9fa;
 }
 
-.navbar-light .navbar-nav .nav-link,
-.navbar-light .navbar-nav .nav-link:focus {
-    padding: 10px 10px 8px 10px;
-    color: #414141; /* Conservez la couleur du texte */
-    font-size: 15px;
-    font-weight: 500;
+@media (min-width: 992px) {
+    .navbar {
+        position: absolute;
+        width: 100%;
+        padding: 30px 60px;
+        background: transparent !important;
+        border-bottom: 1px dashed rgba(256, 256, 256, .2);
+        z-index: 9;
+    }
+    
+    .navbar.nav-sticky {
+        padding: 10px 60px;
+        background: #ffffff !important;
+    }
+    
+    .navbar .navbar-brand {
+        color: #ffffff;
+    }
+    
+    .navbar.nav-sticky .navbar-brand {
+        color: #96b4d2;
+    }
+
+    .navbar-light .navbar-nav .nav-link,
+    .navbar-light .navbar-nav .nav-link:focus {
+        padding: 10px 10px 8px 10px;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    .navbar-light.nav-sticky .navbar-nav .nav-link,
+    .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
+        color: #414141;
+    }
+
+    .navbar-light .navbar-nav .nav-link:hover,
+    .navbar-light .navbar-nav .nav-link.active {
+        color: #111111;
+    }
+    
+    .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
+    .navbar-light.nav-sticky .navbar-nav .nav-link.active {
+        color: #96b4d2;
+    }
 }
 
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: #96b4d2; /* Conservez la couleur du texte au survol */
-}
-
-/* Réduisez le padding pour les petits écrans */
 @media (max-width: 991.98px) {   
     .navbar {
         padding: 15px;
@@ -208,7 +245,7 @@ a:focus {
 .hero {
     position: relative;
     width: 100%;
-    margin-bottom: 45px;
+    margin-bottom: 80px;
     padding: 120px 0 0 0;
     overflow: hidden;
     background: linear-gradient(rgba(150, 180, 210, 1), rgba(150, 180, 210, 1)), url(../img/hero-bg.jpg);
