@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Welcome - Henry Watiotienne Portfolio</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body data-spy="scroll" data-target=".navbar" data-offset="51">
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-light navbar-light">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">Portfolio</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html#home" class="nav-item nav-link active">Accueil</a>
+                        <a href="index.html#about" class="nav-item nav-link">A propos</a>
+                        <a href="index.html#service" class="nav-item nav-link">Formation</a>
+                        <a href="index.html#experience" class="nav-item nav-link">Experience</a>
+                        <a href="index.html#portfolio" class="nav-item nav-link">Portfolio</a>
+                        <a href="index.html#passions" class="nav-item nav-link">Hobbies</a>
+                        <a href="index.html#isfooter" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+
+
+        <!-- Hero Start -->
+        <div class="hero" id="home">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <h1>Stage : Data Scientist & ML Engineer </h1>
+                                <h2></h2>
+                                <div class="typed-text">LLM, IA générative, computeur vision, Python</div>
+                            </div>
+                            <div class="hero-btn">
+                                <a class="btn" href="#isfooter">Contact moi</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 d-none d-md-block">
+                        <div class="hero-image">
+                            <img src="img/dp.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero End -->
+        <div class="container">
+            <div class="section-header text-center">
+                <h1>Rapport : Processus de Conversion d’une Vidéo en Diapositive</h1>
+            </div>
+            <div class="content">
+                <h2>Introduction</h2>
+                <p>
+                    Dans le milieu industriel, la génération automatique de contenu à partir de vidéos ouvre la voie à de nombreuses applications intéressantes, en particulier dans les domaines de la maintenance et de la sécurité. Par exemple, les procédures de maintenance d'équipements complexes peuvent être enregistrées en vidéo, puis transformées en diaporamas détaillés, réduisant ainsi le temps nécessaire à la documentation et facilitant la compréhension des tâches à accomplir pour les techniciens. De la même manière, les vidéos de formations sur la sécurité peuvent être rapidement converties en supports visuels clairs, permettant aux opérateurs de suivre des consignes de sécurité essentielles comme l'utilisation des équipements de protection individuelle (EPI) ou les protocoles d'évacuation en cas d'urgence. Cette automatisation accélère considérablement la création de contenu de qualité pour des procédures.
+                </p>
+                
+                <h2>Objectif</h2>
+                <p>
+                    L'objectif principal du projet était d'automatiser la génération de diaporamas à partir de vidéos, permettant ainsi de digitaliser les instructions de travail de manière rapide et efficace. Cette solution visait à offrir aux opérateurs des documents visuels clairs et faciles à comprendre, tout en réduisant le temps nécessaire à leur création.
+                </p>
+                
+                <h2>Description du processus</h2>
+        
+
+                <p>Voici les éléments de l'architecture développée :</p>
+                <div class="text-center">
+                    <img src="img\Dessin sans titre.jpg" alt="Architecture du Modèle" class="img-fluid">
+                </div>
+
+
+                <h3>1. Entrée Vidéo</h3>
+                <p>
+                    La première étape du processus est l'importation de la vidéo source. Cette vidéo peut contenir des présentations orales, des conférences ou tout autre contenu audiovisuel pertinent. 
+                    <strong>Outil utilisé :</strong> Python (pour la gestion des fichiers vidéo avec des bibliothèques comme OpenCV ou MoviePy).
+                </p>
+        
+                <h3>2. Transcription Automatique du Texte</h3>
+                <p>
+                    La vidéo est ensuite soumise à une technologie de reconnaissance vocale (<em>Speech-to-Text</em>). Ce système analyse l’audio et génère une transcription textuelle précise. Le but de cette étape est de transformer le contenu parlé en texte exploitable pour les étapes suivantes. 
+                    <strong>Outil utilisé :</strong> Python (bibliothèque <code>Whisper</code>).
+                </p>
+        
+                <h3>3. Traitement du Texte</h3>
+                <p>
+                    Une fois le texte transcrit, il subit une phase de traitement pour améliorer sa qualité. Cette phase inclut :
+                </p>
+                <ul>
+                    <li>Le nettoyage des erreurs de transcription (mots mal transcrits, bruits parasites, etc.).</li>
+                    <li>La correction grammaticale et la restructuration des phrases pour obtenir un texte fluide et cohérent.</li>
+                </ul>
+                <p>
+                    <strong>Outil utilisé :</strong> Python (bibliothèque <code>nltk</code> pour le traitement de texte et <code>spaCy</code> pour la correction grammaticale).
+                </p>
+        
+                <h3>4. Résumé par Intervalle de Temps</h3>
+                <p>
+                    Le texte nettoyé est fourni en contexte au LLM, qui a la charge de créer un résumé en suivant un format adapté à une diapositive. En effet, on lui demande de créer un titre et une description détaillée pour chaque partie, ainsi que de fournir un intervalle de temps. Les informations sont ensuite structurées dans un dictionnaire pour faciliter les manipulations.
+                    <strong>Outil utilisé :</strong> Python (LLM : Llama 3.1 via Hugging Face).
+                </p>
+        
+                <h3>5. Extraction des Keyframes</h3>
+                <p>
+                    Dans chaque partie, le système procède à l'extraction d'images clés (keyframes) de la vidéo. Ces images sont sélectionnées en fonction des moments visuellement importants de chaque intervalle de temps identifié. Pour cela, des outils tels que des algorithmes basés sur les embeddings ou les k-means sont utilisés afin d'identifier les scènes les plus représentatives. L'objectif est d'extraire plusieurs images pour permettre à l'utilisateur de choisir celle qu'il souhaite. Le nombre d'images peut être ajusté en fonction des besoins spécifiques.                    <strong>Outil utilisé :</strong> Python et pour l’extraction des images clés avec un algorithme basé sur les k means et des algorithmes d'embeddings (SigLIP de Google).
+                </p>
+        
+                <h3>6. Mise en Forme de la Présentation</h3>
+                <p>
+                    Dans chaque partie, le système procède à l’extraction d’images clés (<em>keyframes</em>) de la vidéo. Ces images sont choisies en fonction des moments visuellement importants de chaque intervalle de temps identifié. Pour cela, des outils comme des algorithmes basés sur les embeddings ou les k-means sont utilisés afin d’identifier les scènes les plus représentatives.
+                    <strong>Outil utilisé :</strong> Python pour l’extraction des images clés avec un algorithme basé sur les k-means et des algorithmes d'embeddings (SigLIP de Google).
+                </p>
+                
+                <h3>Exemple</h3>
+                            <!-- Section du lecteur vidéo -->
+            <div class="text-center">
+                <video controls width="800">
+                    <source src="img\Savez-vous utiliser un défibrillateur _.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+            </div>
+
+            <p>Vous pouvez télécharger le fichier PowerPoint généré (AUTOMATIQUEMENT !) à partir de cette vidéo :</p>
+            
+            <div class="text-center">
+                <a href="pdf\presentation.pdf" download>
+                    <button>Télécharger la présentation</button>
+                </a>
+            </div>
+        
+                <h2>Conclusion</h2>
+                <p>
+                    Ce processus de conversion vidéo en diapositive repose sur des technologies avancées de traitement du langage naturel et d'analyse d'images. Il permet d’automatiser une tâche traditionnellement fastidieuse, tout en produisant des résultats de haute qualité. Ce système est particulièrement utile dans des contextes académiques, professionnels ou lors de conférences, où il est nécessaire de transformer rapidement des contenus vidéo en supports visuels exploitables.
+                </p>
+        
+            </div>
+        </div>
+        
+        
+        <!-- Footer Start -->
+        <div class="footer wow fadeIn" data-wow-delay="0.3s" id="isfooter">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="footer-info">
+                        <h2>Send me a Message !</h2>
+                        <h3>Henry Watiotienne</h3>
+                        <div class="footer-menu">
+                            <p>06 52 87 79 30</p>
+                            <p>hrywatiotienne@gmail.com</p>
+                        </div>
+                        <h3>Lille, France</h3>
+
+                        <div class="footer-social">
+                            <!--a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-youtube"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a -->
+                            <a href="https://github.com/WatiotienneH" target="_blank"><i class="fab fa-github"></i></a>
+
+                            <a href="https://www.linkedin.com/in/henry-watiotienne-072085293/" target="_blank"><i class="fab fa-linkedin-in" ></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container copyright">
+
+                    <p>&copy; <a href="#">Henry Watiotienne</a>, All Right Reserved | Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        
+        <!-- Back to top button -->
+        <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        
+        <!-- Pre Loader -->
+        <div id="loader" class="show">
+            <div class="loader"></div>
+        </div>
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/typed/typed.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
