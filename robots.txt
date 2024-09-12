@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://watiotienneh.github.io/sitemap.xml

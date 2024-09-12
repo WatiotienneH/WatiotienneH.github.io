@@ -8,7 +8,6 @@
         <meta content="Free Website Template" name="description">
 
         <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -175,8 +174,23 @@
                     <img src="img\hardhat.png" alt="Exemple de Classification" class="img-fluid">
                     <p>Exemple d'application du plugin de Classification : détection la présence et l'absence de casque</p>
                 </div>
-                
-        
+                        <h6>Plugin SQL: DrugReviewSQLSearch</h6>
+
+                        <p>
+                            <strong>DrugReviewSQLSearch</strong> est un plugin conçu pour interagir avec une base de données contenant des informations sur les médicaments, associées à une maladie, un commentaire, une note, et une date. Ce plugin sert à interroger la base de données afin de récupérer des informations pertinentes, telles que :
+                        </p>
+                        <ul>
+                            <li><strong>Liste des médicaments pour une maladie spécifique :</strong> Identifier les médicaments les plus couramment prescrits pour une certaine condition médicale.</li>
+                            <li><strong>Avis des patients :</strong> Accéder aux commentaires des patients sur l'efficacité et les effets secondaires des médicaments.</li>
+                            <li><strong>Évaluation des médicaments :</strong> Obtenir les notes pour évaluer l'efficacité du médicament.</li>
+                            <li><strong>Analyse temporelle :</strong> Examiner les avis sur une période spécifique pour observer des tendances ou des changements.</li>
+                        </ul>
+                    </div>
+                <h6>Plugin de restriction : Other</h6>
+                <p>Le plugin Other est conçu pour gérer les questions qui ne relèvent d'aucun domaine spécifique couvert par les autres plugins. Lorsque le plugin Other est invoqué, il retourne la réponse suivante : "Cette requête ne fait pas partie de mon domaine d'expertise."  Il sert en quelque sorte de plugin par défaut et assure que le LLM ne donne pas de réponses inappropriées ou imprécises dans des domaines non prévus pour être traités.                 </p>
+
+
+
                 <h3>Optimisation de l'Architecture :</h3>
                 <p>
                     Pour optimiser notre architecture, nous avons utilisé des librairies telles que vLLM et le traitement par batch, ce qui a permis d'obtenir des gains de performance significatifs, notamment un gain de performance avec un facteur de 14 sur le temps d'inférence. Nous avons également envisagé des métriques pour un futur déploiement, afin d'estimer le coût et le temps d'inférence.
