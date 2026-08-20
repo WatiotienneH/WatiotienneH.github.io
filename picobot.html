@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>PicoBot - Assistant IA embarqué offline | Henry Watiotienne</title>
+    <meta name="description" content="Présentation de PicoBot, assistant IA local et offline basé sur une architecture RAG pour la maintenance et le diagnostic.">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .project-content {
+            padding: 60px 0 75px;
+        }
+        .project-content h2 {
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .project-content p,
+        .project-content li {
+            line-height: 1.8;
+        }
+        .project-visual {
+            max-width: 430px;
+            width: 100%;
+            margin: 10px auto 35px;
+            display: block;
+            border-radius: 12px;
+        }
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0 10px;
+        }
+        .tech-item {
+            padding: 8px 13px;
+            border: 1px solid #5697d8;
+            border-radius: 4px;
+            color: #414141;
+            background: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0 10px;
+        }
+        .project-actions .btn {
+            margin: 0;
+        }
+        @media (max-width: 575.98px) {
+            .project-actions {
+                flex-direction: column;
+            }
+            .project-actions .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="51">
+
+    <!-- Nav Bar -->
+    <div class="navbar navbar-expand-lg bg-light navbar-light">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand">Portfolio</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto">
+                    <a href="index.html#home" class="nav-item nav-link">Accueil</a>
+                    <a href="index.html#about" class="nav-item nav-link">À propos</a>
+                    <a href="index.html#service" class="nav-item nav-link">Formation</a>
+                    <a href="index.html#experience" class="nav-item nav-link">Expérience</a>
+                    <a href="index.html#portfolio" class="nav-item nav-link active">Portfolio</a>
+                    <a href="index.html#isfooter" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="hero" id="home">
+        <div class="container-fluid">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p>Projet IA</p>
+                    <h1>PicoBot</h1>
+                    <h2></h2>
+                    <div class="typed-text">Assistant IA local, RAG, LLM, NVIDIA</div>
+                </div>
+                <div class="hero-btn">
+                    <a class="btn" href="https://www.linkedin.com/posts/picomto_globalindustrie2026-iaindustrielle-picomto-activity-7445094479067320320-dClQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEcGGhYBhTKdiPQc73q12qiAmZmG04wjh-w" target="_blank" rel="noopener noreferrer">
+                        Voir la démonstration
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenu -->
+    <div class="container project-content">
+
+        <div class="section-header text-center">
+            <p>Assistant IA pour l'industrie</p>
+            <h2>PicoBot — IA locale et traçable</h2>
+        </div>
+
+        <h2>Présentation</h2>
+        <p>
+            PicoBot est un assistant d’intelligence artificielle conçu pour accompagner les opérateurs
+            dans des contextes de maintenance et de diagnostic. Il permet d’interroger une base
+            documentaire métier et d’obtenir des réponses directement exploitables dans l’environnement
+            de travail.
+        </p>
+
+        <h2>Objectif</h2>
+        <p>
+            Le projet vise à rendre la documentation technique plus facilement accessible tout en
+            conservant la maîtrise des données. PicoBot fonctionne localement et peut être utilisé
+            dans des environnements où l’accès à des services cloud externes est limité ou impossible.
+        </p>
+
+        <h2>Fonctionnement</h2>
+        <ul>
+            <li>Import et indexation de documents techniques et métier.</li>
+            <li>Recherche des informations les plus pertinentes à partir de la question de l’utilisateur.</li>
+            <li>Génération d’une réponse contextualisée à partir des documents disponibles.</li>
+            <li>Affichage des sources utilisées afin de rendre les réponses vérifiables et traçables.</li>
+            <li>Exécution locale afin de conserver les données au sein de l’environnement de l’entreprise.</li>
+        </ul>
+
+        <h2>Technologies et environnement</h2>
+        <p>
+            Le projet s’appuie sur une architecture RAG et sur des modèles de langage exécutés localement.
+            L’objectif n’est pas seulement de générer une réponse, mais de la rattacher à la documentation
+            réellement disponible.
+        </p>
+
+        <div class="tech-list">
+            <span class="tech-item">Python</span>
+            <span class="tech-item">LLM</span>
+            <span class="tech-item">RAG</span>
+            <span class="tech-item">vLLM</span>
+            <span class="tech-item">Hugging Face</span>
+            <span class="tech-item">NVIDIA</span>
+            <span class="tech-item">Docker</span>
+            <span class="tech-item">SQL</span>
+        </div>
+
+        <h2>Points clés</h2>
+        <ul>
+            <li><strong>100 % local et offline :</strong> adapté aux environnements sensibles ou isolés.</li>
+            <li><strong>Réponses sourcées :</strong> possibilité de retrouver les documents à l’origine de la réponse.</li>
+            <li><strong>Usage métier :</strong> pensé pour assister les opérateurs sur des problématiques de maintenance et de diagnostic.</li>
+            <li><strong>Intégration applicative :</strong> conçu pour être intégré à l’écosystème Picomto.</li>
+        </ul>
+
+        <h2>Démonstration</h2>
+        <p>
+            Une démonstration de PicoBot est disponible sur la page LinkedIn de Picomto.
+        </p>
+
+        <div class="project-actions">
+            <a class="btn"
+               href="https://www.linkedin.com/posts/picomto_globalindustrie2026-iaindustrielle-picomto-activity-7445094479067320320-dClQ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEcGGhYBhTKdiPQc73q12qiAmZmG04wjh-w"
+               target="_blank"
+               rel="noopener noreferrer">
+                Voir la démonstration LinkedIn
+            </a>
+
+            <a class="btn" href="index.html#portfolio">
+                Retour aux projets
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer wow fadeIn" data-wow-delay="0.3s" id="isfooter">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="footer-info">
+                    <h2>Me contacter</h2>
+                    <h3>Henry Watiotienne</h3>
+                    <div class="footer-menu">
+                        <p>06 52 87 79 30</p>
+                        <p>hrywatiotienne@gmail.com</p>
+                    </div>
+                    <h3>Lille, France</h3>
+                    <div class="footer-social">
+                        <a href="https://github.com/WatiotienneH" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/henry-watiotienne-072085293/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

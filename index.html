@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>Henry Watiotienne - Data Scientist Portfolio</title>
-        <meta name="description" content="Découvrez le portfolio de Henry Watiotienne, Data Scientist spécialisé en analyse de données, apprentissage automatique, et ingénierie de la ML.">
+        <title>Henry Watiotienne - Data Scientist & AI Engineer</title>
+        <meta name="description" content="Portfolio de Henry Watiotienne, Data Scientist spécialisé en intelligence artificielle, LLM, RAG, vision par ordinateur et traitement de documents.">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-=       <link rel="canonical" href="https://watiotienneh.github.io">
+        <link rel="canonical" href="https://watiotienneh.github.io">
 
         <!-- Favicon -->
 
@@ -35,7 +35,76 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
-    </head>
+    
+    <style>
+        /* Sélecteur des voyages par année */
+        .travel-years {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 25px 0 35px;
+        }
+
+        .travel-year-btn {
+            min-width: 95px;
+            padding: 10px 22px;
+            border: 2px solid #5697d8;
+            background: #ffffff;
+            color: #5697d8;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .25s ease;
+        }
+
+        .travel-year-btn:hover,
+        .travel-year-btn.active {
+            background: #5697d8;
+            color: #ffffff;
+        }
+
+        .travel-year-content {
+            display: none;
+        }
+
+        .travel-year-content.active {
+            display: flex;
+        }
+
+        .travel-placeholder {
+            width: 100%;
+            min-height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f7f9;
+            border: 1px solid #e1e5e9;
+            color: #797979;
+            font-size: 15px;
+            font-weight: 500;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .travel-year-content .team-item {
+            height: 100%;
+        }
+
+        @media (max-width: 767.98px) {
+            .travel-year-content.active {
+                display: block;
+            }
+
+            .travel-year-btn {
+                min-width: 85px;
+                padding: 9px 18px;
+            }
+        }
+    </style>
+
+</head>
 
     <body data-spy="scroll" data-target=".navbar" data-offset="51">
         <!-- Nav Bar Start -->
@@ -51,7 +120,7 @@
                         <a href="#home" class="nav-item nav-link active">Accueil</a>
                         <a href="#about" class="nav-item nav-link">A propos</a>
                         <a href="#service" class="nav-item nav-link">Formation</a>
-                        <a href="#experience" class="nav-item nav-link">Experience</a>
+                        <a href="#experience" class="nav-item nav-link">Expérience</a>
                         <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
                         <a href="#passions" class="nav-item nav-link">Hobbies</a>
                         <a href="#isfooter" class="nav-item nav-link">Contact</a>
@@ -72,10 +141,10 @@
                                 <p>je suis</p>
                                 <h1>Henry Watiotienne</h1>
                                 <h2></h2>
-                                <div class="typed-text">Data Analyst, Data Scientist, ML Engineer</div>
+                                <div class="typed-text">Data Scientist, AI Engineer</div>
                             </div>
                             <div class="hero-btn">
-                                <a class="btn" href="#isfooter">Contact moi</a>
+                                <a class="btn" href="#isfooter">Me contacter</a>
                             </div>
                         </div>
                     </div>
@@ -102,38 +171,29 @@
                             </div>
                             <div class="about-text">
                                 <p>
-                                    Bien que je sois un jeune diplômé, ma soif d'apprendre et ma capacité à m'adapter rapidement m'ont permis de mener à bien plusieurs projets académiques et professionnels. J'ai acquis une solide expertise en développement d'algorithmes d'intelligence artificielle, notamment avec Python, TensorFlow, Docker, Git. Mon expérience m'a également équipé d'une solide maîtrise des statistiques appliquées à la data science et des compétences en gestion de projets IA, essentielles pour mener à bien des projets innovants.                            </div>
-                            <div class="skills">
-                                <div class="skill-name">
-                                    <p>SQL</p><p>85%</p>
+                                    Spécialisé en intelligence artificielle et machine learning, je développe des solutions autour des LLM, du RAG, de la vision par ordinateur et du traitement de documents, du prototypage à l’intégration dans des applications métier.
+                                </p>
+                            </div>
+                            <div class="skills skills-aligned">
+                                <div class="skill-row">
+                                    <span class="skill-label">IA générative</span>
+                                    <span class="skill-value">LLM, RAG, vLLM, Hugging Face</span>
                                 </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="skill-row">
+                                    <span class="skill-label">Machine Learning & vision</span>
+                                    <span class="skill-value">PyTorch, TensorFlow, Scikit-learn, SigLIP</span>
                                 </div>
-                                <div class="skill-name">
-                                    <p>Python (Scikit-learn, pytorch, pandas, ... )</p><p>90%</p>
+                                <div class="skill-row">
+                                    <span class="skill-label">Data & développement</span>
+                                    <span class="skill-value">Python, Pandas, NumPy, SQL</span>
                                 </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="skill-row">
+                                    <span class="skill-label">Industrialisation</span>
+                                    <span class="skill-value">Docker, Git, pipelines de traitement, intégration applicative</span>
                                 </div>
-                                <div class="skill-name">
-                                    <p>GCP</p><p>75%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="skill-name">
-                                    <p>Git</p><p>95%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-
-                                <div class="skill-name">
-                                    <p>R</p><p>85%</p>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="skill-row">
+                                    <span class="skill-label">Cloud & outils</span>
+                                    <span class="skill-value">GCP, GitHub, Matplotlib</span>
                                 </div>
                             </div>
                         </div>
@@ -209,71 +269,55 @@
 <div class="experience" id="experience">
     <div class="container">
         <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-            <!-- p>My Resume</p-->
-            <h2>Expérience professionnelle</h2>
+            <h2>Expériences professionnelles</h2>
         </header>
         <div class="timeline">
+
+            <!-- Poste actuel -->
             <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
                 <div class="timeline-text">
-                    <div class="timeline-date">Mars 2024 - Sept 2024 (6 mois)</div>
-                    <h2>Picomto</h2>
-                    <h4>Data Scientist & ML engineer Stagiaire<strong>(La Madeleine, France)</strong></h4>
+                    <div class="timeline-date">Depuis septembre 2024</div>
+                    <h2>Allianzes (Picomto)</h2>
+                    <h4>Data Scientist <strong>(La Madeleine, France)</strong></h4>
                     <div class="content">
-                        <p><strong>Développement d'un LLM et de plugins spécialisés :</strong></p>
+                        <p><strong>Missions principales</strong></p>
                         <ul>
-                            <li>Implémentation d'outils spécialisés disponibles par le LLM via appel de fonction</li>
-                            <li>Interaction avec des endpoints de l'application</li>
+                            <li>Veille technologique en IA : suivi des avancées en LLM, RAG et vision, et identification de cas d’usage applicables aux produits.</li>
+                            <li>Recueil et analyse des besoins en collaboration avec les consultants métier et les équipes produit.</li>
+                            <li>Conception, développement et maintenance de solutions Python et de pipelines de traitement de données.</li>
+                            <li>Prototypage et industrialisation de solutions IA, de l’expérimentation à l’intégration dans les applications.</li>
+                            <li>Documentation technique, tests, amélioration continue et maintenance des projets existants.</li>
                         </ul>
 
-                        <p><strong>Optimisation et évaluation du LLM :</strong></p>
+                        <p><strong>Projets principaux</strong></p>
                         <ul>
-                            <li>Techniques de Retrieval-Augmented Generation (RAG), Fine-tuning, Utilisation de vLLM</li>
-                            <li>Création de benchmarks</li>
+                            <li><strong>Video2IT :</strong> transformation de vidéos de maintenance en fiches d’instruction illustrées via une chaîne STT, LLM, K-Means et SigLIP.</li>
+                            <li><strong>Document2IT :</strong> pipeline Python d’extraction et d’analyse de PDF avec OCR, détection de mise en page et traitements déterministes.</li>
+                            <li><strong>PicoBot :</strong> développement d’un RAG 100 % local et offline sur plateforme NVIDIA, avec réponses sourcées et traçables pour la maintenance et le diagnostic.</li>
                         </ul>
 
-                        <p><strong>Développement de modèles de vision (Détection d'objets) :</strong></p>
-                        <ul>
-                            <li>Création de données annotées</li>
-                            <li>Fine-tuning des modèles</li>
-                        </ul>
-
-                        <p><strong>Compétences :</strong></p>
-                        <ul>
-                            <li>Organisation de projets, animation de réunions</li>
-                            <li>Rigueur dans le développement et la documentation, analyse d'articles scientifiques</li>
-                            <li>Communication et rédaction de rapports techniques</li>
-                        </ul>
-
-                        <p><strong>Outils et technologies :</strong></p>
-                        <ul>
-                            <li>Python : HuggingFace, PyTorch, TensorFlow, vLLM, Scikit-learn, Matplotlib</li>
-                            <li>GitHub, Docker, Google Cloud Platform (GCP)</li>
-                        </ul>
-                        <P><strong>Référence :</strong> Sébastien Chevalier</P>
+                        <p><strong>Environnement :</strong> Python, LLM, RAG, vLLM, Hugging Face, PyTorch, Docker, Git, SQL.</p>
                     </div>
                 </div>
             </div>
 
+            <!-- Stage -->
             <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
                 <div class="timeline-text">
-                    <div class="timeline-date">Sept 2024 - Févr 2024 (6 mois)</div>
-                    <h2>VitamineT</h2>
-                    <h4>Data Scientist : Projet d'entreprise <strong>(Lesquin, France)</strong></h4>
+                    <div class="timeline-date">Mars 2024 - Septembre 2024 (6 mois)</div>
+                    <h2>Allianzes (Picomto)</h2>
+                    <h4>Data Scientist Stagiaire <strong>(La Madeleine, France)</strong></h4>
                     <div class="content">
-                        <p><strong>Objectifs :</strong> Mise en évidence des patterns sur le parcours des individus et prédiction du statut de sortie</p>
-                        <p><strong>Actions réalisées :</strong></p>
+                        <p><strong>Développement et optimisation de LLM et modèles de vision</strong></p>
                         <ul>
-                            <li>Analyse descriptive, identification d'outliers</li>
-                            <li>Nettoyage des données (suppression des doublons, traitement spécifique des colonnes de texte libre, ex : analyse de polarité, extraction de mots-clés)</li>
-                            <li>Exploitation des données, dont certaines non structurées, pour identifier des patterns</li>
-                            <li>Création d'indicateurs clés</li>
-                            <li>Algorithme de classification (Random Forest) et de clustering (K-means)</li>
+                            <li>Développement d’un LLM avec des outils spécialisés via appels de fonctions et interaction avec les endpoints de l’application.</li>
+                            <li>Optimisation et évaluation des modèles : RAG, fine-tuning, vLLM et création de benchmarks.</li>
+                            <li>Développement de modèles de vision pour la détection d’objets : création de jeux de données annotés et fine-tuning.</li>
+                            <li>Analyse d’articles scientifiques, développement et documentation technique, organisation de projets, animation de réunions et rédaction de rapports.</li>
                         </ul>
-                        <p><strong>Outils utilisés :</strong></p>
-                        <ul>
-                            <li>Python (Keras, scikit-learn, matplotlib, seaborn)</li>
-                        </ul>
-                        <p><strong>Référence : </strong>Fabrice Denoual</p>
+
+                        <p><strong>Technologies :</strong> Python, Hugging Face, PyTorch, TensorFlow, vLLM, Scikit-learn, Matplotlib, GitHub, Docker, GCP.</p>
+                        <p><strong>Référence :</strong> Sébastien Chevalier — Co-fondateur, Directeur Produit & Directeur des Opérations.</p>
                     </div>
                 </div>
             </div>
@@ -287,7 +331,7 @@
         <div class="banner wow zoomIn" data-wow-delay="0.1s">
             <div class="container">
                 <div class="container banner-text text-center">
-                    <a class="btn btn-primary btn-lg" href="pdf\CV_2024-08-12_Henry_Watiotienne_DS.pdf">Découvre Mon CV détaillé</a>
+                    <a class="btn btn-primary btn-lg" href="pdf\CV_2026-08-20_Henry_Watiotienne.pdf">Découvrir mon CV détaillé</a>
                 </div>
             </div>
         </div>
@@ -298,11 +342,30 @@
     <div class="container">
         <div class="main_title">
             <h2>Les derniers projets</h2>
-            <p>Plongez dans mes projets, un terrain où la statistique, l'intelligence artificielle et la data science se fusionnent pour créer des solutions efficaces et novatrices.</p>
+            <p>Découvrez une sélection de projets en intelligence artificielle, data science et automatisation, du prototypage à l’intégration dans des applications métier.</p>
         </div>
     </div>
     <div class="container">
         <div class="gallery_f_inner row imageGallery1 portfolio-container">
+            <!-- PicoBot -->
+            <div class="col-lg-4 col-md-4 col-sm-6 portfolio-item filter-1">
+                <div class="h_gallery_item">
+                    <div class="g_img_item"
+                         onclick="window.location.href='picobot.html';"
+                         style="cursor: pointer; position: relative;">
+                        <img class="img-fluid"
+                             src="img/picobot.png"
+                             alt="PicoBot - Assistant IA embarqué offline">
+                        <div class="overlay">Découvrir le projet</div>
+                    </div>
+                    <div class="g_item_text">
+                        <h4>PicoBot — Assistant IA embarqué offline</h4>
+                        <p>RAG local, LLM, NVIDIA, Python</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin PicoBot -->
+
             <!-- Portfolio Item Start -->
             <div class="col-lg-4 col-md-4 col-sm-6 portfolio-item filter-1">
                 <div class="h_gallery_item">
@@ -312,7 +375,7 @@
                     </div>
                     <div class="g_item_text">
                         <h4>Projet : Génération automatique de diaporama à partir d'une vidéo </h4>
-                        <p>LLM, IA générative, computeur vision, Python</p>
+                        <p>LLM, IA générative, computer vision, Python</p>
                     </div>
                 </div>
             </div>
@@ -325,7 +388,7 @@
                 <div class="g_item_text">
                     <h4>Stage : Pilotage par LLM de modules spécialisés utilisant le RAG et
                         l'enrichissement intellectuel humain supervisé. </h4>
-                    <p>LLM, IA générative, computeur vision, Python</p>
+                    <p>LLM, IA générative, computer vision, Python</p>
                 </div>
             </div>
         </div>
@@ -452,35 +515,92 @@
         <!-- Voyages Section -->
         <div class="section-header text-center wow zoomIn" data-wow-delay="0.3s">
             <h3>Voyages</h3>
-            <P>J'adore voyager, découvrir des cultures et vivre de nouvelles expériences. Voici les derniers periples</P>
+            <p>J'adore voyager, découvrir des cultures et vivre de nouvelles expériences. Découvrez mes voyages année par année.</p>
         </div>
-        <div class="row">
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+
+        <div class="travel-years" role="tablist" aria-label="Voyages par année">
+            <button class="travel-year-btn active"
+                    type="button"
+                    data-travel-year="2024"
+                    aria-selected="true">
+                2024
+            </button>
+            <button class="travel-year-btn"
+                    type="button"
+                    data-travel-year="2025"
+                    aria-selected="false">
+                2025
+            </button>
+            <button class="travel-year-btn"
+                    type="button"
+                    data-travel-year="2026"
+                    aria-selected="false">
+                2026
+            </button>
+        </div>
+
+        <!-- Voyages 2024 -->
+        <div class="row travel-year-content active" data-travel-content="2024">
+            <div class="col-lg-6 mb-4">
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="img\téléchargement (3).jpg" alt="Paris Marathon 2023">
+                        <img src="img\téléchargement (3).jpg" alt="Voyage à Valence en 2024">
                     </div>
                     <div class="team-text">
-                        <h2>Valence 2024</h2>
-                        <p></p>
+                        <h2>Valence</h2>
+                        <p>2024</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
+
+            <div class="col-lg-6 mb-4">
                 <div class="team-item">
                     <div class="team-img">
-                        <img src="img\images.jpg" alt="Paris Versailles 2022">
+                        <img src="img\images.jpg" alt="Voyage à Cologne en 2024">
                     </div>
                     <div class="team-text">
-                        <h2>Cologne 2024</h2>
-                        <p></p>
+                        <h2>Cologne</h2>
+                        <p>2024</p>
                     </div>
                 </div>
             </div>
         </div>
 
-           <!-- Voyages Section -->
-           <div class="section-header text-center wow zoomIn" data-wow-delay="0.3s">
+        <!-- Voyages 2025 -->
+        <div class="row travel-year-content" data-travel-content="2025">
+            <div class="col-lg-6 mb-4">
+                <div class="team-item">
+                    <div class="team-img">
+                        <div class="team-img">
+                            <img src="img\c9d5560b-da54-4da1-ad3a-784a3457de12-1_all_12797.jpg" alt="Bali">
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Bali</h2>
+                        <p>2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Voyages 2026 -->
+        <div class="row travel-year-content" data-travel-content="2026">
+            <div class="col-lg-6 mb-4">
+                <div class="team-item">
+                    <div class="team-img">
+                        <div class="team-img">
+                            <img src="img\ChatGPT Image 20 août 2026, 22_03_37.png" alt="Tenerife">
+                        </div>
+                    </div>
+                    <div class="team-text">
+                        <h2>Tenerife</h2>
+                        <p>2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-header text-center wow zoomIn" data-wow-delay="0.3s">
             <h3>Loisirs</h3>
         </div>
         <div class="row">
@@ -501,7 +621,7 @@
                         <img src="img\images (2).jpg" alt="Paris Versailles 2022">
                     </div>
                     <div class="team-text">
-                        <h2>Jeu de société</h2>
+                        <h2>Jeux de société</h2>
                         <p>Les jeux de société ont toujours été une passion pour moi. Ils sont une excellente manière de se réunir entre amis et en famille, de partager des moments de complicité et de stratégie.</p>
                     </div>
                 </div>
@@ -713,5 +833,32 @@
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
-    </body>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const yearButtons = document.querySelectorAll('.travel-year-btn');
+            const yearContents = document.querySelectorAll('.travel-year-content');
+
+            yearButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    const selectedYear = button.dataset.travelYear;
+
+                    yearButtons.forEach(function (item) {
+                        const isActive = item === button;
+                        item.classList.toggle('active', isActive);
+                        item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    });
+
+                    yearContents.forEach(function (content) {
+                        content.classList.toggle(
+                            'active',
+                            content.dataset.travelContent === selectedYear
+                        );
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
 </html>

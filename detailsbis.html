@@ -58,12 +58,12 @@
                     <div class="col-sm-12 col-md-6">
                         <div class="hero-content">
                             <div class="hero-text">
-                                <h1>Stage : Data Scientist & ML Engineer </h1>
+                                <h1>Video2IT — Génération de fiches d’instruction</h1>
                                 <h2></h2>
-                                <div class="typed-text">LLM, IA générative, computeur vision, Python</div>
+                                <div class="typed-text">IA générative, traitement vidéo, vision par ordinateur, Python</div>
                             </div>
                             <div class="hero-btn">
-                                <a class="btn" href="#isfooter">Contact moi</a>
+                                <a class="btn" href="#isfooter">Me contacter</a>
                             </div>
                         </div>
                     </div>
@@ -78,95 +78,91 @@
         <!-- Hero End -->
         <div class="container">
             <div class="section-header text-center">
-                <h1>Processus de Conversion d’une Vidéo en Diapositive</h1>
+                <h1>Video2IT — De la vidéo à l’instruction de travail</h1>
             </div>
+
             <div class="content">
-                <h2>Introduction</h2>
+                <h2>Présentation</h2>
                 <p>
-                    Dans le milieu industriel, la génération automatique de contenu à partir de vidéos ouvre la voie à de nombreuses applications intéressantes, en particulier dans les domaines de la maintenance et de la sécurité. Par exemple, les procédures de maintenance d'équipements complexes peuvent être enregistrées en vidéo, puis transformées en diaporamas détaillés, réduisant ainsi le temps nécessaire à la documentation et facilitant la compréhension des tâches à accomplir pour les techniciens. De la même manière, les vidéos de formations sur la sécurité peuvent être rapidement converties en supports visuels clairs, permettant aux opérateurs de suivre des consignes de sécurité essentielles comme l'utilisation des équipements de protection individuelle (EPI) ou les protocoles d'évacuation en cas d'urgence. Cette automatisation accélère considérablement la création de contenu de qualité pour des procédures.
+                    Video2IT automatise la transformation de vidéos de maintenance ou de formation
+                    en fiches d’instruction illustrées, structurées et directement exploitables
+                    par les opérateurs.
                 </p>
-                
+
                 <h2>Objectif</h2>
                 <p>
-                    L'objectif principal du projet était d'automatiser la génération de diaporamas à partir de vidéos, permettant ainsi de digitaliser les instructions de travail de manière rapide et efficace. Cette solution visait à offrir aux opérateurs des documents visuels clairs et faciles à comprendre, tout en réduisant le temps nécessaire à leur création.
+                    L’objectif est de réduire le temps nécessaire à la création de documentation
+                    tout en facilitant la capitalisation et le partage des connaissances métier.
+                    À partir d’une vidéo, la solution identifie les étapes importantes, produit
+                    les contenus associés et sélectionne des illustrations pertinentes.
                 </p>
-                
-                <h2>Description du processus</h2>
-        
 
-                <p>Voici les éléments de l'architecture développée :</p>
-                <div class="text-center">
-                    <img src="img\Dessin sans titre.jpg" alt="Architecture du Modèle" class="img-fluid">
-                </div>
+                <h2>Fonctionnement</h2>
+                <ul>
+                    <li>Transcription automatique du contenu audio de la vidéo.</li>
+                    <li>Identification et structuration des principales étapes de l’intervention.</li>
+                    <li>Génération de titres et de descriptions adaptés à une instruction de travail.</li>
+                    <li>Sélection automatique d’images représentatives pour illustrer chaque étape.</li>
+                    <li>Production d’un support structuré pouvant être repris dans Picomto.</li>
+                </ul>
 
-
-                <h3>1. Entrée Vidéo</h3>
+                <h2>Outils utilisés</h2>
                 <p>
-                    La première étape du processus est l'importation de la vidéo source. Cette vidéo peut contenir des présentations orales, des conférences ou tout autre contenu audiovisuel pertinent. 
-                    <strong>Outil utilisé :</strong> Python (pour la gestion des fichiers vidéo avec des bibliothèques comme OpenCV ou MoviePy).
-                </p>
-        
-                <h3>2. Transcription Automatique du Texte</h3>
-                <p>
-                    La vidéo est ensuite soumise à une technologie de reconnaissance vocale (<em>Speech-to-Text</em>). Ce système analyse l’audio et génère une transcription textuelle précise. Le but de cette étape est de transformer le contenu parlé en texte exploitable pour les étapes suivantes. 
-                    <strong>Outil utilisé :</strong> Python (bibliothèque <code>Whisper</code>).
-                </p>
-        
-                <h3>3. Traitement du Texte</h3>
-                <p>
-                    Une fois le texte transcrit, il subit une phase de traitement pour améliorer sa qualité. Cette phase inclut :
+                    La solution est développée principalement en <strong>Python</strong> et combine plusieurs briques
+                    d’intelligence artificielle :
                 </p>
                 <ul>
-                    <li>Le nettoyage des erreurs de transcription (mots mal transcrits, bruits parasites, etc.).</li>
-                    <li>La correction grammaticale et la restructuration des phrases pour obtenir un texte fluide et cohérent.</li>
+                    <li><strong>Speech-to-Text (STT)</strong> pour transformer l’audio en texte.</li>
+                    <li><strong>LLM</strong> pour structurer le contenu et générer les différentes étapes.</li>
+                    <li><strong>K-Means</strong> et <strong>SigLIP</strong> pour identifier et sélectionner des images représentatives de la vidéo.</li>
+                    <li><strong>Hugging Face</strong> pour l’utilisation et l’intégration de modèles d’IA.</li>
                 </ul>
-                <p>
-                    <strong>Outil utilisé :</strong> Python (bibliothèque <code>nltk</code> pour le traitement de texte et <code>spaCy</code> pour la correction grammaticale).
-                </p>
-        
-                <h3>4. Résumé par Intervalle de Temps</h3>
-                <p>
-                    Le texte nettoyé est fourni en contexte au LLM, qui a la charge de créer un résumé en suivant un format adapté à une diapositive. En effet, on lui demande de créer un titre et une description détaillée pour chaque partie, ainsi que de fournir un intervalle de temps. Les informations sont ensuite structurées dans un dictionnaire pour faciliter les manipulations.
-                    <strong>Outil utilisé :</strong> Python (LLM : Llama 3.1 via Hugging Face).
-                </p>
-        
-                <h3>5. Extraction des Keyframes</h3>
-                <p>
-                    Dans chaque partie, le système procède à l'extraction d'images clés (keyframes) de la vidéo. Ces images sont sélectionnées en fonction des moments visuellement importants de chaque intervalle de temps identifié. Pour cela, des outils tels que des algorithmes basés sur les embeddings ou les k-means sont utilisés afin d'identifier les scènes les plus représentatives. L'objectif est d'extraire plusieurs images pour permettre à l'utilisateur de choisir celle qu'il souhaite. Le nombre d'images peut être ajusté en fonction des besoins spécifiques.                    <strong>Outil utilisé :</strong> Python et pour l’extraction des images clés avec un algorithme basé sur les k means et des algorithmes d'embeddings (SigLIP de Google).
-                </p>
-        
-                <h3>6. Mise en Forme de la Présentation</h3>
-                <p>
-                    Dans chaque partie, le système procède à l’extraction d’images clés (<em>keyframes</em>) de la vidéo. Ces images sont choisies en fonction des moments visuellement importants de chaque intervalle de temps identifié. Pour cela, des outils comme des algorithmes basés sur les embeddings ou les k-means sont utilisés afin d’identifier les scènes les plus représentatives.
-                    <strong>Outil utilisé :</strong> Python pour l’extraction des images clés avec un algorithme basé sur les k-means et des algorithmes d'embeddings (SigLIP de Google).
-                </p>
-                
-                <h3>Exemple</h3>
-                            <!-- Section du lecteur vidéo -->
-            <div class="text-center">
-                <video controls width="800">
-                    <source src="img\Savez-vous utiliser un défibrillateur _.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture de vidéos.
-                </video>
-            </div>
 
-            <p>Vous pouvez télécharger le fichier PowerPoint généré (AUTOMATIQUEMENT !) à partir de cette vidéo :</p>
-            
-            <div class="text-center">
-                <a href="pdf\presentation.pdf" download>
-                    <button>Télécharger la présentation</button>
-                </a>
-            </div>
-        
-                <h2>Conclusion</h2>
+                <h2>Exemple</h2>
                 <p>
-                    Ce processus de conversion vidéo en diapositive repose sur des technologies avancées de traitement du langage naturel et d'analyse d'images. Il permet d’automatiser une tâche traditionnellement fastidieuse, tout en produisant des résultats de haute qualité. Ce système est particulièrement utile dans des contextes académiques, professionnels ou lors de conférences, où il est nécessaire de transformer rapidement des contenus vidéo en supports visuels exploitables.
+                    Voici un exemple de vidéo pouvant être traitée par la solution :
                 </p>
-        
+
+                <div class="text-center" style="margin: 25px 0;">
+                    <video controls width="800" style="max-width: 100%; height: auto;">
+                        <source src="img\Savez-vous utiliser un défibrillateur _.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                </div>
+
+                <p>
+                    Vous pouvez également consulter un exemple de présentation générée automatiquement à partir de cette vidéo.
+                </p>
+
+                <div class="text-center" style="margin: 20px 0 40px 0;">
+                    <a class="btn" href="pdf\presentation.pdf" download>
+                        Télécharger la présentation
+                    </a>
+                </div>
+
+                <h2>Démonstration</h2>
+                <p>
+                    Une démonstration plus récente de la solution est disponible sur la page LinkedIn de Picomto.
+                </p>
+
+                <div class="text-center" style="margin: 30px 0 45px 0;">
+                    <a class="btn"
+                       href="https://www.linkedin.com/posts/picomto_globalindustrie2026-goldentech-picomto-activity-7445468689673396225-u1iW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEcGGhYBhTKdiPQc73q12qiAmZmG04wjh-w"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Voir la démonstration
+                    </a>
+                </div>
+
+                <h2>Résultat</h2>
+                <p>
+                    Video2IT permet d’accélérer la création de supports de travail à partir de contenus
+                    vidéo existants et de rendre la connaissance métier plus facilement accessible,
+                    structurée et réutilisable.
+                </p>
             </div>
         </div>
-        
-        
+
         <!-- Footer Start -->
         <div class="footer wow fadeIn" data-wow-delay="0.3s" id="isfooter">
             <div class="container-fluid">

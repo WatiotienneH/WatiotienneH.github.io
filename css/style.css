@@ -1686,3 +1686,59 @@ a:focus {
         padding: 0 5px;
     }
 }
+
+/****************************************/
+/***** About - Skills alignées (2026) ****/
+/****************************************/
+.about .skills-aligned {
+    margin-top: 22px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.about .skill-row {
+    display: grid;
+    grid-template-columns: 210px minmax(0, 1fr);
+    column-gap: 20px;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.about .skill-row:last-child {
+    border-bottom: none;
+}
+
+.about .skill-label {
+    color: #5f6770;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.about .skill-value {
+    color: #797979;
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+@media (max-width: 1199.98px) {
+    .about .skill-row {
+        grid-template-columns: 185px minmax(0, 1fr);
+        column-gap: 16px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .about .skill-row {
+        grid-template-columns: 1fr;
+        row-gap: 3px;
+        padding: 9px 0;
+    }
+
+    .about .skill-label,
+    .about .skill-value {
+        text-align: left;
+    }
+}
